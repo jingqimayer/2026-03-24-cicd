@@ -1,0 +1,21 @@
+on:
+  push:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello
+        run: echo "Hello World"
+      - name: second step
+        run: echo "Hello"
+
+test:
+  name: test python
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout
+    - name: Install
+      run: pip install .[test]
+    - name: Run
+      run: pytest -vv
