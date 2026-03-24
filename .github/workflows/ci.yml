@@ -10,12 +10,12 @@ jobs:
       - name: second step
         run: echo "Hello"
 
-test:
-  name: test python
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout
-    - name: Install
-      run: pip install .[test]
-    - name: Run
-      run: pytest -vv
+  test:
+    name: test python
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install
+        run: pip install .[test]
+      - name: Run
+        run: pytest -vv
